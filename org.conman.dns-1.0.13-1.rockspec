@@ -1,18 +1,18 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "org.conman.dns"
-version = "1.0.12-1"
+version = "1.0.13-1"
 
 -- LuaDist source
 source = {
-  tag = "1.0.12-1",
+  tag = "1.0.13-1",
   url = "git://github.com/LuaDist-testing/org.conman.dns.git"
 }
 -- Original source
 -- source = 
 -- {
 --   url = "git://github.com/spc476/SPCDNS.git",
---   tag = "v1.0.12"
+--   tag = "v1.0.13"
 -- }
 
 description =
@@ -39,15 +39,23 @@ build =
   build_target   = "src/dns.so",
   install_target = "install-lua",
   
+  platforms =
+  {
+    linux   = { build_variables = { CC = "gcc -std=c99" } },
+    solaris = { build_varaibles = { CC = "c99"          } },
+  },
+  
   build_variables =
   {
-    CC     = "c99",
-    CFLAGS = "$(CFLAGS) -I$(LUA_INCDIR)",
+    CC      = "$(CC)",
+    CFLAGS  = "$(CFLAGS) -I$(LUA_INCDIR)",
+    LDSHARE = "$(LIBFLAG)",
+    LUA     = "$(LUA)",
   },
   
   install_variables =
   {
-    LUA = "$(LIBDIR)"
+    LIBDIR = "$(LIBDIR)",
+    LUA    = "$(LUA)",
   }
 }
- 
