@@ -1,18 +1,18 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "org.conman.dns"
-version = "1.0.13-1"
+version = "1.0.14-1"
 
 -- LuaDist source
 source = {
-  tag = "1.0.13-1",
+  tag = "1.0.14-1",
   url = "git://github.com/LuaDist-testing/org.conman.dns.git"
 }
 -- Original source
 -- source = 
 -- {
 --   url = "git://github.com/spc476/SPCDNS.git",
---   tag = "v1.0.13"
+--   tag = "v1.0.14"
 -- }
 
 description =
